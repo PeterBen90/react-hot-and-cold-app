@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+.counter {
+  text-align: center;
+  padding: 30px;
+  font-size: 20px;
+  color: darkgrey;
+  padding-bottom: 0px;
+}
+
+.count {
+  color: #f39c12;
+  font-size: 50px;
+}
+
+p {
+  text-align: left;
+  position: relative;
+  top: 30px;
+}
+
+.track {
+  color: #f39c12;
+}
