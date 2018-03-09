@@ -1,14 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import './counter.css';
+import "./counter.css";
 
-export default function Counter() {
-  const count = "Guess # "
-  const tracker = "Number Tracker: "
+export default function Counter(props) {
   return (
     <div className="counter">
-      <h3>{count}<span className="count">0</span></h3>
-      <p>{tracker}<span className="track">0</span></p>
+      <h3>Guess # {props.counter}</h3>
     </div>
   );
 }

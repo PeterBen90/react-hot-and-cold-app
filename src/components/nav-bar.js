@@ -2,7 +2,7 @@ import React from 'react';
 
 import './nav-bar.css';
 
-export default function NavBar() {
+export default function NavBar(props) {
   return (
     <div className="nav-bar">
       <nav className="nav-bar-nav">
