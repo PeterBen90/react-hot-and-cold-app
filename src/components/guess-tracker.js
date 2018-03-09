@@ -9,7 +9,7 @@ export default function GuessTracker(props) {
 
   return (
     <div className="guess-tracker">
-      <ul id="guessTracker">{guesses}</ul>
+      <ul id="guessTracker">Guess Tracker: {guesses} </ul>
     </div>
   );
 }

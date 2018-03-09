@@ -11,7 +11,13 @@
 }
 
 .counter {
-  color: #f39c12;
+  color: darkgrey;
   font-size: 30px;
+  text-shadow: 2px 2px black;
 }
 
+span {
+  color: #f39c12;
+  font-size: 50px;
+  text-shadow: 2px 2px black;
+}

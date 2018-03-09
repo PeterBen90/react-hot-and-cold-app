@@ -12,7 +12,7 @@ class Game extends Component {
     super(props);
     this.state = {
       guesses: [],
-      hotCold: "",
+      hotCold: "Pick a number between 1 and 100",
       currentNumber: Math.floor(Math.random() * 100) + 1
     };
   }
@@ -20,7 +20,7 @@ class Game extends Component {
   restartGame() {
     this.setState({
       guesses: [],
-      hotCold: "",
+      hotCold: "Pick a number between 1 and 100",
       correctAnswer: Math.floor(Math.random() * 100) + 1
     });
   }
