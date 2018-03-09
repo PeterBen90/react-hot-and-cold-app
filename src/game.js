@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './game.css';
 import NavBar from './components/nav-bar';
+import HotCold from './components/hot-cold';
 import InputForm from './components/input-form';
 import Counter from './components/counter';
 import GuessTracker from './components/guess-tracker';
@@ -11,9 +12,17 @@ class Game extends Component {
     super(props);
     this.state = {
       guesses: [],
-      hotCold: "Look!",
+      hotCold: "",
       currentNumber: Math.floor(Math.random() * 100) + 1
     };
+  }
+
+  restartGame() {
+    this.setState({
+      guesses: [],
+      hotCold: "",
+      correctAnswer: Math.floor(Math.random() * 100) + 1
+    });
   }
 
   setGuess(currentGuess) {
@@ -51,10 +60,11 @@ class Game extends Component {
     const title = "HOT or COLD";
     return (
       <div className="Game">
-        <NavBar />
+        <NavBar onRestartGame={() => this.restartGame()} />
         <h1>{title}</h1>
+        <HotCold hotCold={hotCold} />
         <InputForm onSetGuess={currentGuess => this.setGuess(currentGuess)} />
-        <Counter counter={counter}/>
+        <Counter counter={counter} />
         <GuessTracker guesses={guesses} />
       </div>
     );

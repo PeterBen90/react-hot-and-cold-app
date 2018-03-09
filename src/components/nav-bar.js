@@ -7,18 +7,11 @@ export default function NavBar(props) {
     <div className="nav-bar">
       <nav className="nav-bar-nav">
         <ul>
-          <li className="about">
-            <a href="#what"
-               className="what"
-               aria-label="How to play"
-            >
-            WHAT?
-            </a>
-          </li>
           <li className="new-game">
-            <a href="#New Game"
+            <a href="#New"
                className="restart"
                aria-label="restart"
+               onClick={() => props.onRestartGame()}
             >
             +NEW GAME
             </a>
