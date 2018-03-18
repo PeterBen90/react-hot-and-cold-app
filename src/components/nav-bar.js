@@ -1,8 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { restartGame } from '../actions';
 
 import './nav-bar.css';
 
-export default function NavBar(props) {
+export function NavBar(props) {
   return (
     <div className="nav-bar">
       <nav className="nav-bar-nav">
@@ -11,8 +14,10 @@ export default function NavBar(props) {
             <a href="#New"
                className="restart"
                aria-label="restart"
-               onClick={() => props.onRestartGame()}
-            >
+               onClick={() =>
+                props.dispatch(
+                    restartGame(Math.floor(Math.random() * 100) + 1)
+                )}>
             +NEW GAME
             </a>
           </li>
@@ -21,3 +26,5 @@ export default function NavBar(props) {
     </div>
   );
 }
+
+export default connect()(NavBar);

@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+
+import { makeGuess } from '../actions';
+
 import './input-form.css';
 
 class InputForm extends Component {
     onSubmit(event) {
         event.preventDefault();
 
-        if (this.props.onSetGuess) {
-            const value = this.input.value;
-            this.props.onSetGuess(value);
-        }
+
+        const value = this.input.value;
+        this.props.dispatch(makeGuess(value));
         this.input.value = "";
+        this.input.focus();
     }
 
     render() {
@@ -20,6 +24,7 @@ class InputForm extends Component {
             <input
                 aria-controls="number-input"
                 type="number"
+                className="text"
                 min="1"
                 max="100"
                 id="guess"
@@ -36,4 +41,4 @@ class InputForm extends Component {
 
 }
 
-export default InputForm;
+export default connect ()(InputForm);
